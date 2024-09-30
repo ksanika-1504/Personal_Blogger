@@ -43,6 +43,7 @@ import { Navbar } from './components/Navbar/Navbar';
 import { About, Contact, Home, Dashboard } from './components/pages';
 import { useState } from 'react';
 
+
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
