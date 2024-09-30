@@ -1,28 +1,23 @@
 import './Navbar.css';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-export const Navbar = ({ loggedIn }) => {
+export const Navbar = ({ loggedIn, setLoggedIn }) => {
   return (
-    <nav>
-      <Link
-        to="/"
-        className="title"
-      >
-        Website
-      </Link>
-      <div className="menu">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div className="menu">
+      <div className="logo">
+        <h1>Logo</h1>
       </div>
-      <ul>
+      <ul className="nav-links">
         {loggedIn ? (
           <>
             <li>
-              <NavLink to="/about">Home</NavLink>
+              <NavLink to="/home">Home</NavLink>
             </li>
             <li>
               <NavLink to="/dashboard">Dashboard</NavLink>
+            </li>
+            <li>
+              <button onClick={() => setLoggedIn(false)}>Logout</button>
             </li>
           </>
         ) : (
@@ -31,6 +26,6 @@ export const Navbar = ({ loggedIn }) => {
           </li>
         )}
       </ul>
-    </nav>
+    </div>
   );
 };

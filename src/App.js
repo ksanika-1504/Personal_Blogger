@@ -1,57 +1,22 @@
-// // import './App.css';
-// // import AuthForm from './components/login/AuthForm'
-// // import {Navbar} from './components/Navbar/Navbar';
-
-// // function App() {
-// //   return (
-// //     <div className>
-// //       <Navbar/>
-// //       <AuthForm />
-// //       </div>
-
-// //   );
-// // }
-
-// // export default App;
-
-// import { Route, Routes } from "react-router-dom";
-// import "./App.css";
-// import AuthForm from './components/login/AuthForm'
-// import { Navbar } from "./components/Navbar/Navbar";
-// import { About, Contact, Home, Dashboard} from "./components/pages";
-// // import { Dashboard } from "@mui/icons-material";
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Navbar />
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/about" element={<About />} />
-//         <Route path="/dashboard" element={<Dashboard/>} />
-//         <Route path="/contact" element={<Contact />} />
-//         <Route path="/LoginSignUp" element={<AuthForm/>} />
-//       </Routes>
-//     </div>
-//   );
-// }
-
-// export default App;
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AuthForm from './components/login/AuthForm';
 import { Navbar } from './components/Navbar/Navbar';
 import { About, Contact, Home, Dashboard } from './components/pages';
 import { useState } from 'react';
-
+import './App.css';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+
   return (
-    <>
-      <div style={{ height: '10%' }}>
-        <Navbar loggedIn={loggedIn} />
-      </div>
-      <div style={{ height: '90%' }}>
+    <div className="main">
+      <Router>
+        {loggedIn && (
+          <Navbar
+            loggedIn={loggedIn}
+            setLoggedIn={setLoggedIn}
+          />
+        )}
         <Routes>
           {loggedIn ? (
             <>
@@ -70,7 +35,7 @@ function App() {
               <Route
                 path="/contact"
                 element={<Contact />}
-              />{' '}
+              />
             </>
           ) : (
             <Route
@@ -83,9 +48,23 @@ function App() {
               }
             />
           )}
+          {/* Redirect to home if the user is logged in and tries to access the auth route */}
+          <Route
+            path="*"
+            element={
+              loggedIn ? (
+                <Home />
+              ) : (
+                <AuthForm
+                  loggedIn={loggedIn}
+                  setLoggedIn={setLoggedIn}
+                />
+              )
+            }
+          />
         </Routes>
-      </div>
-    </>
+      </Router>
+    </div>
   );
 }
 

@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AuthForm.css';
-function AuthForm({ setLoggedIn, loggedIn }) {
-  // const [isLogin,setLoggedIn] = useState(true)
+function AuthForm({ setLoggedIn }) {
+  const navigate = useNavigate();
+  const [loginForm, setLoginForm] = useState(false);
   return (
     <div className="auth-container">
       <div className="form-container">
         <div className="form-toggle">
           <button
-            className={loggedIn ? 'active' : ' '}
-            onClick={() => setLoggedIn(true)}
+            onClick={() => setLoginForm(true)}
+            className={loginForm ? 'active' : ' '}
           >
             Login
           </button>
           <button
-            className={!loggedIn ? 'active' : ' '}
-            onClick={() => setLoggedIn(false)}
+            className={!loginForm ? 'active' : ' '}
+            onClick={() => setLoginForm(false)}
           >
             SignUp
           </button>
         </div>
-        {loggedIn ? (
+        {loginForm ? (
           <>
             <div className="form">
               <h2>Login Form </h2>
@@ -32,15 +34,22 @@ function AuthForm({ setLoggedIn, loggedIn }) {
                 placeholder="Password"
               />
               <a href="#"> Forgot Password ? </a>
-              <button>Login</button>
+              <button
+                onClick={() => {
+                  setLoggedIn(true);
+                }}
+              >
+                Login
+              </button>
               <p>
                 Not a Member ?{' '}
-                <a
-                  href="#"
-                  onClick={() => setLoggedIn(false)}
+                <p
+                  onClick={() => {
+                    setLoginForm(false);
+                  }}
                 >
                   Signup Now
-                </a>
+                </p>
               </p>
             </div>
           </>
@@ -64,7 +73,13 @@ function AuthForm({ setLoggedIn, loggedIn }) {
                 type="password"
                 placeholder=" Confirm Password"
               />
-              <button>Submit </button>
+              <button
+                onClick={() => {
+                  setLoggedIn(true);
+                }}
+              >
+                Submit{' '}
+              </button>
             </div>
           </>
         )}
