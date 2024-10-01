@@ -36,6 +36,7 @@ function AuthForm({ setLoggedIn }) {
               <a href="#"> Forgot Password ? </a>
               <button
                 onClick={() => {
+                  navigate('/');
                   setLoggedIn(true);
                 }}
               >
@@ -75,6 +76,7 @@ function AuthForm({ setLoggedIn }) {
               />
               <button
                 onClick={() => {
+                  navigate('/');
                   setLoggedIn(true);
                 }}
               >
