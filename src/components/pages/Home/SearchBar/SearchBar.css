@@ -1,0 +1,69 @@
+/* .searchBar-wrap{
+    background-color: #f0f0f0;
+    width: fit-content;
+    margin: 2.5rem auto 4 rem auto;
+    padding: .5rem;
+    border-radius: 5px;
+}
+.searchBar-wrap form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchBar-wrap  input{
+    background-color: #f0f0f0;
+    outline: none;
+    border: none;
+}
+.searchBar-wrap span {
+    padding-right: .5rem;
+    cursor: pointer;
+}
+.searchBar-wrap  button{
+    outline: none;
+    border: none;
+    padding: .3rem 1rem;
+    border-radius: 5px;
+    background-color: #0fff;
+} */
+
+
+.searchBar-wrap {
+    background-color: #f0f0f0;
+    width: 100%; 
+    max-width: 250px;
+    margin: 2.5rem auto 4rem auto;
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.searchBar-wrap form {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items within the form */
+    width: 100%; /* Make the form take full width */
+}
+
+.searchBar-wrap input {
+    background-color: #f0f0f0;
+    outline: none;
+    border: none;
+    padding: 0.5rem; /* Added padding for better spacing */
+    border-radius: 5px; /* Rounded corners for input */
+    margin-right: 0.5rem; /* Space between input and clear button */
+}
+
+.searchBar-wrap span {
+    padding-right: 0.5rem;
+    cursor: pointer;
+}
+
+.searchBar-wrap button {
+    outline: none;
+    border: none;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    background-color: #0ff; /* Corrected from #0fff to #0ff */
+    cursor: pointer; /* Changes the cursor to pointer */
+}

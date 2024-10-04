@@ -6,7 +6,7 @@ export const Navbar = ({ loggedIn, setLoggedIn }) => {
   return (
     <div className="menu">
       <div className="logo">
-        <h1>Logo</h1>
+        <h4>SANIKA</h4>
       </div>
       <ul className="nav-links">
         {loggedIn ? (
@@ -15,10 +15,13 @@ export const Navbar = ({ loggedIn, setLoggedIn }) => {
               <NavLink to="/home">Home</NavLink>
             </li>
             <li>
+              <NavLink to="/blogs/:id">Blogs</NavLink>
+            </li>
+            <li>
               <NavLink to="/dashboard">Dashboard</NavLink>
             </li>
             <li>
-              <button
+              <button className='btn'
                 onClick={() => {
                   navigate('/auth');
                   setLoggedIn(false);

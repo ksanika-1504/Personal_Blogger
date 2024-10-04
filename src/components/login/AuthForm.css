@@ -7,7 +7,25 @@
     height: 100%;
     width: 100%;
   }
+  @media (max-width: 768px) {
+    .auth-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+  }
   
+  @media (max-width: 600px) {
+    .auth-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+  }
   .form-container {
     background-color: white;
     padding: 20px;

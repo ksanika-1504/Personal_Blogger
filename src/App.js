@@ -2,11 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AuthForm from './components/login/AuthForm';
 import { Navbar } from './components/Navbar/Navbar';
 import { About, Contact, Home, Dashboard } from './components/pages';
+import Page from './components/pages/Blogs/index';
 import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true); //change the state 
 
   return (
     <div className="main">
@@ -25,8 +26,8 @@ function App() {
                 element={<Home />}
               />
               <Route
-                path="/about"
-                element={<About />}
+                path="/blogs/:id"
+                element={<Page/>}
               />
               <Route
                 path="/dashboard"

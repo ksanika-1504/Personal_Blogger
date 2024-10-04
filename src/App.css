@@ -4,13 +4,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+ 
 }
 
 
 .main {
   width: 100vw;
   height: 100vh;
-  background-color: aqua;
+  /* background-color: #7E60BF; */
 }
 
 .content{
