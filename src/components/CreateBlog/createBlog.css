@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group {
+    width: 30%; /* Keep this width for the upload button */
+    margin-bottom: 20px;
+}
+
+label {
+    color: black;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%; /* Full width for blog name input */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.upload-button {
+    background-color: #0738d6;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Full width for the upload button */
+    text-align: center;
+}
+
+.upload-button:hover {
+    background-color: #06173f;
+}
+
+.form-group.full-width {
+    width: 100%; /* Full width for the content section */
+}
+
+.quill-editor {
+    width: 100%; /* 100% width */
+    margin-top: 10px; /* Add some spacing if necessary */
+}
+
+/* Optional: set a specific height for the editor if needed */
+.ql-container {
+    height: 100%; /* Adjust height of the container */
+}
+
+.ql-editor {
+    min-height: 400px; /* Minimum height for the editor */
+}
+.form-group:last-child {
+    margin-bottom: 0; /* Remove margin for the last group */
+}
+
