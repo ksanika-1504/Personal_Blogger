@@ -1,0 +1,21 @@
+.dashboard-container {
+    display: flex;                  /* Enable flexbox */
+    justify-content: center;        /* Center horizontally */
+    align-items: center;            /* Center vertically */
+    height: 100vh;                 /* Full height of the viewport */
+    background-color: #f9f9f9;     /* Optional: set a background color */
+}
+
+.button-name {
+    padding: 10px 20px;           /* Add some padding */
+    background-color: #0738d6;    /* Button background color */
+    color: white;                  /* Button text color */
+    border: none;                  /* Remove default border */
+    border-radius: 4px;           /* Rounded corners */
+    cursor: pointer;               /* Change cursor to pointer on hover */
+    font-size: 16px;               /* Increase font size */
+}
+
+.button-name:hover {
+    background-color: #06173f;     /* Darker shade on hover */
+}

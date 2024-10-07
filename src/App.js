@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AuthForm from './components/login/AuthForm';
 import { Navbar } from './components/Navbar/Navbar';
-import { About, Contact, Home, Dashboard } from './components/pages';
+import { About,  Home, Dashboard } from './components/pages';
+import CreateBlog from './components/CreateBlog/createBlog';
 import Page from './components/pages/Blogs/index';
 import { useState } from 'react';
 import './App.css';
@@ -33,10 +34,14 @@ function App() {
                 path="/dashboard"
                 element={<Dashboard />}
               />
-              <Route
-                path="/contact"
-                element={<Contact />}
+               <Route
+                path="/createBlog"
+                element={<CreateBlog />}
               />
+              {/* <Route
+                path="/addblog"
+                element={<AddBlog/>}
+              /> */}
             </>
           ) : (
             <Route
